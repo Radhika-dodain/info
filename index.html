@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile and Credentials</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+        }
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        .tab {
+            padding: 10px;
+            font-weight: bold;
+        }
+        .tab:hover, .tab.active {
+            color: #007BFF;
+            border-bottom: 2px solid #007BFF;
+        }
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+        <h1>XYZ</h1>
+        <p>Family Lawyer | Child Custody & Divorce Specialist | Mediator</p>
+    </div>
+
+    <div class="tabs">
+        <div class="tab active" onclick="openTab('overview')">Overview</div>
+        <div class="tab" onclick="openTab('achievements')">Achievements</div>
+        <div class="tab" onclick="openTab('skills')">Skills & Expertise</div>
+        <div class="tab" onclick="openTab('contact')">Contact Information</div>
+    </div>
+
+    <div id="overview" class="section active">
+        <h2>Overview</h2>
+        <p><strong>Age:</strong>32 </p>
+        <p><strong>Location:</strong> Pune, Maharashtra</p>
+        <p><strong>Academic Background:</strong> law degree from the National Law University in Delhi</p>
+    </div>
+
+    <div id="achievements" class="section">
+        <h2>Achievements</h2>
+        <ul>
+            <li><strong>Recipient of the INBA Women in Law Award (2022) for excellence in family law.</li>
+            <li><strong>Awarded Best Family Lawyer by India Legal Awards in 2021.</li>
+            <li><strong>Published articles on family law and child welfare in Legal Era Magazine and The Indian Advocate.</li>
+        </ul>
+    </div>
+
+    <div id="skills" class="section">
+        <h2>Key Practices</h2>
+        <ul>
+            <li><strong>Divorce and Separation</li>
+            <li><strong>Child Custody and Visitation Rights</li>
+            <li><strong>Domestic Violence and Protection Orders</li>
+        </ul>
+    </div>
+
+    <div id="contact" class="section">
+        <h2>Contact Information</h2>
+        <p><strong>Email:</strong> xyz@example.com</p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/xyz" target="_blank">linkedin.com/in/xyz</a></p>
+        <p>Mobile info:</strong>1234567890</p>
+    </div>
+
+    <div class="footer">
+        <button onclick="editProfile()">Edit Profile</button>
+        <button onclick="logout()">Logout</button>
+    </div>
+</div>
+
+<script>
+    function openTab(tabId) {
+        document.querySelectorAll('.section').forEach((section) => {
+            section.classList.remove('active');
+        });
+        document.querySelectorAll('.tab').forEach((tab) => {
+            tab.classList.remove('active');
+        });
+        document.getElementById(tabId).classList.add('active');
+        event.target.classList.add('active');
+    }
+
+    function editProfile() {
+        alert("Edit Profile functionality coming soon!");
+    }
+
+    function logout() {
+        alert("Logging out...");
+        // Redirect to login page or perform logout
+    }
+</script>
+
+</body>
+</html>
